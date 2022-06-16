@@ -27,5 +27,14 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
     'import/extensions': 'off',
     'linebreak-style': 'off',
+    'no-param-reassign': ['error', {
+      props: true,
+      ignorePropertyModificationsFor: [
+        'state',
+      ],
+    }],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'error',
+    'import/prefer-default-export': 'off',
   },
 };

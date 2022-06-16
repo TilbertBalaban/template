@@ -2,7 +2,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import starshipReducer from './slices/starshipsSlice';
 
 const rootReducer = combineReducers({
-  starshipsRoot: starshipReducer,
+  starshipsRoot: starshipReducer.reducer,
 });
 
 export const setupStore = () => configureStore({

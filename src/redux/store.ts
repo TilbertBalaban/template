@@ -1,10 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { postsApi } from '../utils/postsApi';
 import { vehiclesApi } from '../utils/vehiclesApi';
-import starshipReducer from './slices/starshipsSlice';
+import { itemsSlice } from './slices/sliceExample';
 
 const rootReducer = combineReducers({
-  starshipsRoot: starshipReducer.reducer,
+  itemsRoot: itemsSlice.reducer,
   [vehiclesApi.reducerPath]: vehiclesApi.reducer,
   [postsApi.reducerPath]: postsApi.reducer,
 });

@@ -1,20 +1,20 @@
-import fetchStarships from '../../redux/actions/fetchStarships';
+import { fetchItems } from '../../redux/actions/createAsyncThunkExample';
 import { useTypedDispatch, useTypedSelector } from '../../redux/hooks';
 
-const StarshipsContainer = () => {
-  const { starships, isLoading, error } = useTypedSelector((state) => state.starshipsRoot);
+export const ItemsContainer = () => {
+  const { items, isLoading, error } = useTypedSelector((state) => state.itemsRoot);
 
   const dispatch = useTypedDispatch();
 
   return (
     <div>
       {error && <div>{error}</div>}
-      {starships.length
+      {items.length
         ? (
           <div>
-            { starships.map((starship) => (
-              <div key={starship.model}>
-                {starship.name}
+            { items.map((item) => (
+              <div key={item.model}>
+                {item.name}
               </div>
             ))}
           </div>
@@ -23,14 +23,12 @@ const StarshipsContainer = () => {
       {isLoading && <span>Loading...</span>}
       <button
         onClick={() => {
-          dispatch(fetchStarships());
+          dispatch(fetchItems());
         }}
         type="button"
       >
-        load ships
+        load items
       </button>
     </div>
   );
 };
-
-export { StarshipsContainer };

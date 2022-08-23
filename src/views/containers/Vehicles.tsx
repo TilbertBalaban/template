@@ -1,9 +1,9 @@
-import { vehiclesApi } from '../../utils/vehiclesApi';
+import { getApiExample } from '../../utils/getApiExample';
 
 const VehiclesContainer = () => {
   const {
     data: vehicles,
-  } = vehiclesApi.useGetVehiclesQuery(0);
+  } = getApiExample.useGetVehiclesQuery(0);
 
   return (
     <div>

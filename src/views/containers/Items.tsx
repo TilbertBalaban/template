@@ -2,7 +2,7 @@ import { fetchItems } from '../../redux/actions/createAsyncThunkExample';
 import { useTypedDispatch, useTypedSelector } from '../../redux/hooks';
 
 export const ItemsContainer = () => {
-  const { items, isLoading, error } = useTypedSelector((state) => state.itemsRoot);
+  const { items, isLoading, error } = useTypedSelector((state) => state.sliceWithRequestExample);
 
   const dispatch = useTypedDispatch();
 

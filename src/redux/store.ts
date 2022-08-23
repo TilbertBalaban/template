@@ -1,19 +1,21 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { postsApi } from '../utils/postsApi';
-import { vehiclesApi } from '../utils/vehiclesApi';
-import { itemsSlice } from './slices/sliceExample';
+import { postApiExample } from '../utils/postApiExample';
+import { getApiExample } from '../utils/getApiExample';
+import { sliceWithRequestExample } from './slices/sliceWithRequestExample';
+import { sliceWithoutRequestExample } from './slices/sliceWithoutRequestExample';
 
 const rootReducer = combineReducers({
-  itemsRoot: itemsSlice.reducer,
-  [vehiclesApi.reducerPath]: vehiclesApi.reducer,
-  [postsApi.reducerPath]: postsApi.reducer,
+  sliceWithRequestExample: sliceWithRequestExample.reducer,
+  sliceWithoutRequestExample: sliceWithoutRequestExample.reducer,
+  [getApiExample.reducerPath]: getApiExample.reducer,
+  [postApiExample.reducerPath]: postApiExample.reducer,
 });
 
 export const setupStore = () => configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware()
-    .concat(vehiclesApi.middleware)
-    .concat(postsApi.middleware),
+    .concat(getApiExample.middleware)
+    .concat(postApiExample.middleware),
 });
 
 export type RootState = ReturnType<typeof rootReducer>

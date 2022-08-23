@@ -1,4 +1,4 @@
-import { postsApi } from '../../utils/postsApi';
+import { postApiExample } from '../../utils/postApiExample';
 
 export const PostsContainer = () => {
   const [
@@ -6,11 +6,11 @@ export const PostsContainer = () => {
     {
       isLoading,
     },
-  ] = postsApi.usePostPostMutation();
+  ] = postApiExample.usePostPostMutation();
 
   const {
     isLoading: isLoadingGetPosts,
-  } = postsApi.useGetPostsQuery(0);
+  } = postApiExample.useGetPostsQuery(0);
 
   return (
     <div>

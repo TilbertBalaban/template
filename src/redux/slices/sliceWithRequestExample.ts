@@ -2,20 +2,20 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IStarship } from '../../models/IStarship';
 import { fetchItems } from '../actions/createAsyncThunkExample';
 
-interface ItemState {
+interface ISliceWithRequestExampleState {
   items: IStarship[],
   isLoading: boolean,
   error: null | string,
 }
 
-const initialState:ItemState = {
+const initialState: ISliceWithRequestExampleState = {
   items: [],
   isLoading: false,
   error: null,
 };
 
-export const itemsSlice = createSlice({
-  name: 'starships',
+export const sliceWithRequestExample = createSlice({
+  name: 'sliceWithRequestExample',
   initialState,
   reducers: {},
   extraReducers: {

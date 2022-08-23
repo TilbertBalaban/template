@@ -1,4 +1,4 @@
-import { getApiExample } from '../../utils/getApiExample';
+import { getApiExample } from '../../utils/api/getApiExample';
 
 const VehiclesContainer = () => {
   const {

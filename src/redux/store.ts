@@ -1,6 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { postApiExample } from '../utils/postApiExample';
-import { getApiExample } from '../utils/getApiExample';
+import { postApiExample } from '../utils/api/postApiExample';
+import { getApiExample } from '../utils/api/getApiExample';
 import { sliceWithRequestExample } from './slices/sliceWithRequestExample';
 import { sliceWithoutRequestExample } from './slices/sliceWithoutRequestExample';
 

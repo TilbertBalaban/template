@@ -1,4 +1,4 @@
-import { postApiExample } from '../../utils/postApiExample';
+import { postApiExample } from '../../utils/api/postApiExample';
 
 export const PostsContainer = () => {
   const [

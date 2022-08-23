@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { IVehicle } from '../models/IVehicle';
+import { IVehicle } from '../../models/IVehicle';
 import { STAR_WARS_API_URL } from './consts';
 
 export const getApiExample = createApi({

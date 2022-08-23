@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { IStarship } from '../../models/IStarship';
-import { STAR_WARS_API_URL } from '../../utils/consts';
+import { STAR_WARS_API_URL } from '../../utils/api/consts';
 
 const url = `${STAR_WARS_API_URL}starships/`;
 

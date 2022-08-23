@@ -6,14 +6,14 @@ export const postApiExample = createApi({
   reducerPath: 'postApiExample',
   baseQuery: fetchBaseQuery({ baseUrl: JSON_PLACEHOLDER_API_URL }),
   tagTypes: ['post'],
-  endpoints: (build) => ({
-    getPosts: build.query<IPost[], number>({
+  endpoints: (builder) => ({
+    getPosts: builder.query<IPost[], number>({
       query: () => ({
         url: 'posts/',
       }),
       providesTags: () => ['post'],
     }),
-    postPost: build.mutation<IPost, IPost>({
+    postPost: builder.mutation<IPost, IPost>({
       query: (post) => ({
         url: 'posts/',
         method: 'POST',

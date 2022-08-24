@@ -1,4 +1,4 @@
-export const validateAge = (age: number):string => {
+export const validateAge = (age: number): string => {
   if (age < 0 || age > 150 || Number.isNaN(age)) {
     return 'Invalid';
   }

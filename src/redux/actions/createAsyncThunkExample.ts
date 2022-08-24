@@ -10,7 +10,7 @@ export const fetchItems = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       const response = await axios.get<{
-        results: IStarship[]
+        results: IStarship[];
       }>(url);
       return response.data.results;
     } catch (e) {

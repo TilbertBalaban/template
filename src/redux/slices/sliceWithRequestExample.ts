@@ -3,9 +3,9 @@ import { IStarship } from '../../models/IStarship';
 import { fetchItems } from '../actions/createAsyncThunkExample';
 
 interface ISliceWithRequestExampleState {
-  items: IStarship[],
-  isLoading: boolean,
-  error: null | string,
+  items: IStarship[];
+  isLoading: boolean;
+  error: null | string;
 }
 
 const initialState: ISliceWithRequestExampleState = {
@@ -23,7 +23,10 @@ export const sliceWithRequestExample = createSlice({
       state.isLoading = true;
       state.error = null;
     },
-    [fetchItems.fulfilled.type]: (state, action: PayloadAction<IStarship[]>) => {
+    [fetchItems.fulfilled.type]: (
+      state,
+      action: PayloadAction<IStarship[]>,
+    ) => {
       state.isLoading = false;
       state.items = action.payload;
       state.error = null;

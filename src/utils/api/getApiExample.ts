@@ -10,9 +10,8 @@ export const getApiExample = createApi({
       query: () => ({
         url: 'vehicles/',
       }),
-      transformResponse: (response: {
-        results: IVehicle[],
-      }) => response.results,
+      transformResponse: (response: { results: IVehicle[] }) =>
+        response.results,
     }),
   }),
 });

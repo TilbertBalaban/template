@@ -11,13 +11,15 @@ const rootReducer = combineReducers({
   [postApiExample.reducerPath]: postApiExample.reducer,
 });
 
-export const setupStore = () => configureStore({
-  reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware()
-    .concat(getApiExample.middleware)
-    .concat(postApiExample.middleware),
-});
+export const setupStore = () =>
+  configureStore({
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware()
+        .concat(getApiExample.middleware)
+        .concat(postApiExample.middleware),
+  });
 
-export type RootState = ReturnType<typeof rootReducer>
-export type AppStore = ReturnType<typeof setupStore>
-export type AppDispatch = AppStore['dispatch']
+export type RootState = ReturnType<typeof rootReducer>;
+export type AppStore = ReturnType<typeof setupStore>;
+export type AppDispatch = AppStore['dispatch'];

@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface ISliceWithoutRequestExampleState {
-  value: number,
+  value: number;
 }
 
 const initialState: ISliceWithoutRequestExampleState = {

@@ -1,4 +1,4 @@
 export interface IStarship {
-    name: string,
-    model: string,
+  name: string;
+  model: string;
 }

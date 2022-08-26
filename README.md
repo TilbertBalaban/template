@@ -25,3 +25,7 @@
 ## scss (mixins, variables etc)
 
 (in future - next, vercel, husky)
+
+# Husky
+1. install - `npm install husky --save-dev`
+2. add the new hook - `npx husky add .husky/pre-commit "npm test"`

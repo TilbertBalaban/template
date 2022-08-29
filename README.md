@@ -10,7 +10,10 @@
 
 ### redux slices (get, post)
 
-## GraphQL typed with TS
+## GraphQL (+ Apollo) typed with TS
+1. query
+2. mutation
+3. subscription (websockets)
 
 ## Tests
 
@@ -25,3 +28,7 @@
 ## scss (mixins, variables etc)
 
 (in future - next, vercel, husky)
+
+# Husky
+1. install - `npm install husky --save-dev`
+2. add the new hook - `npx husky add .husky/pre-commit "npm test"`

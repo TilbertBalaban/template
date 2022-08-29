@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.6.9",
     "@reduxjs/toolkit": "^1.8.2",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -13,6 +14,7 @@
     "@types/react-dom": "^18.0.5",
     "@types/react-redux": "^7.1.24",
     "axios": "^0.27.2",
+    "graphql": "^16.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
@@ -23,7 +25,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "react-scripts test",
+    "pre-push": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -71,8 +74,7 @@
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,html}": [
       "prettier --write",
-      "eslint --fix src/",
-      "stylelint --fix '**/*.{css,scss}'"
+      "eslint --fix src/"
     ],
     "src/**/*.{css,scss}": [
       "prettier --write",

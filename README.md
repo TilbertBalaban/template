@@ -11,6 +11,9 @@
 ### redux slices (get, post)
 
 ## GraphQL typed with TS
+1. query
+2. mutation
+3. subscription (websockets)
 
 ## Tests
 

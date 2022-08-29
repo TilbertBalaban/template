@@ -2,6 +2,7 @@
 
 exports[`test 1`] = `
 <button
+  data-testid="add-posts-btn"
   type="button"
 >
   add post

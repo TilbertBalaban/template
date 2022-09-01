@@ -24,6 +24,7 @@
 ### storybook + screenshots (loki)
 
 ### e2e (WebdriverIO)
++ add integration with Google Lighthouse
 
 ## scss (mixins, variables etc)
 

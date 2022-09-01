@@ -2,7 +2,9 @@ import React, { PropsWithChildren } from 'react';
 import { render } from '@testing-library/react';
 import type { RenderOptions } from '@testing-library/react';
 import type { PreloadedState } from '@reduxjs/toolkit';
+import { MockedProvider } from '@apollo/client/testing';
 import { Provider } from 'react-redux';
+import { MemoryRouter } from 'react-router-dom';
 
 import { setupStore } from '../../redux/store';
 import type { AppStore, RootState } from '../../redux/store';
@@ -20,8 +22,16 @@ export function renderWithProviders(
     ...renderOptions
   }: ExtendedRenderOptions = {},
 ) {
+  const mocks: any[] = [];
+
   const Wrapper = ({ children }: PropsWithChildren<{}>) => {
-    return <Provider store={store}>{children}</Provider>;
+    return (
+      <Provider store={store}>
+        <MockedProvider mocks={mocks} addTypename={false}>
+          <MemoryRouter>{children}</MemoryRouter>
+        </MockedProvider>
+      </Provider>
+    );
   };
   return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };
 }

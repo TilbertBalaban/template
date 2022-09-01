@@ -27,6 +27,8 @@
 
 ## scss (mixins, variables etc)
 
+# PWA
+
 (in future - next, vercel, husky)
 
 # Husky

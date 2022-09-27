@@ -27,7 +27,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "pre-push": "react-scripts test --watchAll=false && wdio run wdio.conf.js",
+    "pre-push": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "wdio": "wdio run wdio.conf.js"
   },

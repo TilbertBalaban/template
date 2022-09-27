@@ -12,6 +12,7 @@ module.exports = {
     'plugin:import/typescript',
     'prettier',
     'plugin:wdio/recommended',
+    'plugin:storybook/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -24,7 +25,12 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'wdio'],
   rules: {
     'react/react-in-jsx-scope': 'off',
-    'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
+    'react/jsx-filename-extension': [
+      1,
+      {
+        extensions: ['.jsx', '.tsx'],
+      },
+    ],
     'import/extensions': 'off',
     'linebreak-style': 'off',
     'no-param-reassign': [
@@ -46,5 +52,13 @@ module.exports = {
     ],
     'arrow-body-style': 'off',
     'class-methods-use-this': 'off',
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: ['**/*.stories.*', '**/.storybook/**/*.*'],
+        peerDependencies: true,
+      },
+    ],
+    'react/require-default-props': 'off'
   },
 };

@@ -12,7 +12,7 @@ export const ItemsContainer = () => {
     <div>
       {error && <div>{error}</div>}
       {items.length ? (
-        <div>
+        <div id="items-list">
           {items.map((item) => (
             <div key={item.model}>{item.name}</div>
           ))}
@@ -23,6 +23,7 @@ export const ItemsContainer = () => {
         onClick={() => {
           dispatch(fetchItems());
         }}
+        id="load-items-btn"
         type="button"
       >
         load items

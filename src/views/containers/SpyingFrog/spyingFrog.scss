@@ -1,0 +1,32 @@
+.spying-frog {
+  position: relative;
+  width: 400px;
+  margin: 20px auto;
+
+  .eye-left,
+  .eye-right {
+    position: absolute;
+    top: 80px;
+    width: 40px;
+    height: 40px;
+
+    &::before {
+      position: absolute;
+      z-index: 0;
+      display: block;
+      width: 30px;
+      height: 30px;
+      background: #000;
+      border-radius: 50%;
+      content: '';
+    }
+  }
+
+  .eye-left {
+    left: 107px;
+  }
+
+  .eye-right {
+    left: 185px;
+  }
+}

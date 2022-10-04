@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import { Provider } from 'react-redux';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
@@ -18,10 +19,22 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+const Router = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route
+        path="/test_url"
+        element={<div data-testid="test_url">Test url</div>}
+      />
+    </Routes>
+  </BrowserRouter>
+);
+
 root.render(
   <Provider store={store}>
     <ApolloProvider client={client}>
-      <App />
+      <Router />
     </ApolloProvider>
   </Provider>,
 );

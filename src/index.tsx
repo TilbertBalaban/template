@@ -16,7 +16,7 @@ import App from 'App';
 import { HeaderContainer } from 'views/containers/Header/Header';
 
 import { setupStore } from 'redux/store';
-import { paths } from 'utils/urls';
+import { paths } from 'utils/paths';
 
 const store = setupStore();
 

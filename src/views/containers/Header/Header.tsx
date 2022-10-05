@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { paths } from 'utils/urls';
+import { paths } from 'utils/paths';
 
 import './header.scss';
 

@@ -31,7 +31,8 @@
     "eject": "react-scripts eject",
     "wdio": "wdio run wdio.conf.js",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "loki": "npx loki test"
   },
   "eslintConfig": {
     "extends": [
@@ -94,8 +95,10 @@
     "husky": "^8.0.1",
     "jest": "^28.1.3",
     "lint-staged": "^13.0.3",
+    "loki": "^0.30.3",
     "prettier": "2.7.1",
     "prop-types": "^15.8.1",
+    "sass": "^1.55.0",
     "stylelint": "^14.11.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-prettier-scss": "^0.0.1",
@@ -115,5 +118,20 @@
       "prettier --write",
       "stylelint --fix"
     ]
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.docker",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.docker",
+        "preset": "iPhone 7"
+      }
+    }
   }
 }

@@ -10,7 +10,7 @@
   "rules": {
     "indentation": 2,
     "at-rule-empty-line-before": null,
-    "rule-empty-line-before": ["always", { "disableFix": true }],
+    "rule-empty-line-before": ["always", { "disableFix": false }],
     "string-quotes": "single",
     "declaration-empty-line-before": null,
     "comment-empty-line-before": null,

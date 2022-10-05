@@ -60,5 +60,8 @@ module.exports = {
       },
     ],
     'react/require-default-props': 'off',
+    'import/no-unresolved': 'off',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
   },
 };

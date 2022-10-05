@@ -1,22 +1,21 @@
 import { RefObject, useLayoutEffect } from 'react';
 
-const angleF = ({
-  cx,
-  cy,
-  ex,
-  ey,
+const calculateAngle = ({
+  ax,
+  ay,
+  bx,
+  by,
 }: {
-  cx: number;
-  cy: number;
-  ex: number;
-  ey: number;
+  ax: number;
+  ay: number;
+  bx: number;
+  by: number;
 }): number => {
-  const dy = ey - cy;
-  const dx = ex - cx;
+  const dy = by - ax;
+  const dx = bx - ay;
 
   const rad = Math.atan2(dy, dx);
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const deg = (rad * 180) / Math.PI;
 
   return deg;
@@ -25,18 +24,20 @@ const angleF = ({
 export const useSpyingEyeball = (eyeRef: RefObject<HTMLDivElement>): null => {
   useLayoutEffect(() => {
     const eyePosition = eyeRef.current?.getBoundingClientRect();
-    const x = (eyePosition?.left || 0) + (eyePosition?.width || 0) / 2;
-    const y = (eyePosition?.top || 0) + (eyePosition?.height || 0) / 2;
+    const eyePositionX =
+      (eyePosition?.left || 0) + (eyePosition?.width || 0) / 2;
+    const eyePositionY =
+      (eyePosition?.top || 0) + (eyePosition?.height || 0) / 2;
 
-    const change = (e: MouseEvent) => {
+    const rotateEyeball = (e: MouseEvent) => {
       const mouseX = e.clientX;
       const mouseY = e.clientY;
 
-      const angle = angleF({
-        cx: mouseX,
-        cy: mouseY,
-        ex: x,
-        ey: y,
+      const angle = calculateAngle({
+        ax: mouseX,
+        ay: mouseY,
+        bx: eyePositionX,
+        by: eyePositionY,
       });
 
       if (eyeRef.current) {
@@ -44,9 +45,9 @@ export const useSpyingEyeball = (eyeRef: RefObject<HTMLDivElement>): null => {
         eyeRef.current.style.transform = `rotate(${angle - 50}deg)`;
       }
     };
-    document.addEventListener('mousemove', change);
+    document.addEventListener('mousemove', rotateEyeball);
     return () => {
-      document.removeEventListener('mousemove', change);
+      document.removeEventListener('mousemove', rotateEyeball);
     };
   }, [eyeRef.current]);
 

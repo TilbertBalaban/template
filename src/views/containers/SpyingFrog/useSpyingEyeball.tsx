@@ -11,8 +11,8 @@ const calculateAngle = ({
   bx: number;
   by: number;
 }): number => {
-  const dy = by - ax;
-  const dx = bx - ay;
+  const dy = by - ay;
+  const dx = bx - ax;
 
   const rad = Math.atan2(dy, dx);
 

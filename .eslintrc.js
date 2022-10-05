@@ -59,6 +59,6 @@ module.exports = {
         peerDependencies: true,
       },
     ],
-    'react/require-default-props': 'off'
+    'react/require-default-props': 'off',
   },
 };

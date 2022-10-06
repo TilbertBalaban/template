@@ -5,4 +5,5 @@ export enum paths {
   RtkCreateAsyncThunk = 'rtk_create_async_thunk',
   RtkCreateApiPost = 'rtk_create_api_post',
   GraphQLAndApollo = 'graphql_and_apollo',
+  ScrollAnimation = 'scroll_animation',
 }

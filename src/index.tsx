@@ -17,6 +17,7 @@ import { HeaderContainer } from 'views/containers/Header/Header';
 
 import { setupStore } from 'redux/store';
 import { paths } from 'utils/paths';
+import { ScrollAnimation } from 'views/containers/ScrollAnimation/ScrollAnimation';
 
 const store = setupStore();
 
@@ -35,6 +36,7 @@ const Router = () => (
     <Routes>
       <Route path={paths.Homepage} element={<App />} />
       <Route path={paths.SpyingFrog} element={<SpyingFrog />} />
+      <Route path={paths.ScrollAnimation} element={<ScrollAnimation />} />
       <Route path={paths.RtkCreateApi} element={<VehiclesContainer />} />
       <Route path={paths.RtkCreateAsyncThunk} element={<ItemsContainer />} />
       <Route path={paths.RtkCreateApiPost} element={<PostsContainer />} />

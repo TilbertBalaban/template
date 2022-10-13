@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 // use ApiProvider if you do not already have a Redux store.
 // import { ApiProvider } from '@reduxjs/toolkit/query/react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import { SpyingFrog } from 'views/containers/SpyingFrog/SpyingFrog';
 import { VehiclesContainer } from 'views/containers/Vehicles';
@@ -17,6 +18,8 @@ import { HeaderContainer } from 'views/containers/Header/Header';
 
 import { setupStore } from 'redux/store';
 import { paths } from 'utils/paths';
+import { ScrollAnimation } from 'views/containers/ScrollAnimation/ScrollAnimation';
+import { ReactQueryExample } from 'views/containers/ReactQueryExample';
 
 const store = setupStore();
 
@@ -29,12 +32,21 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
+
 const Router = () => (
   <BrowserRouter>
     <HeaderContainer />
     <Routes>
       <Route path={paths.Homepage} element={<App />} />
       <Route path={paths.SpyingFrog} element={<SpyingFrog />} />
+      <Route path={paths.ScrollAnimation} element={<ScrollAnimation />} />
       <Route path={paths.RtkCreateApi} element={<VehiclesContainer />} />
       <Route path={paths.RtkCreateAsyncThunk} element={<ItemsContainer />} />
       <Route path={paths.RtkCreateApiPost} element={<PostsContainer />} />
@@ -42,6 +54,7 @@ const Router = () => (
         path={paths.GraphQLAndApollo}
         element={<GraphQlAndApolloExample />}
       />
+      <Route path={paths.ReactQuery} element={<ReactQueryExample />} />
     </Routes>
   </BrowserRouter>
 );
@@ -49,7 +62,9 @@ const Router = () => (
 root.render(
   <Provider store={store}>
     <ApolloProvider client={client}>
-      <Router />
+      <QueryClientProvider client={queryClient}>
+        <Router />
+      </QueryClientProvider>
     </ApolloProvider>
   </Provider>,
 );

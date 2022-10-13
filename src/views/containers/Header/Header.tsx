@@ -12,18 +12,12 @@ const HeaderContainer = () => {
       <Link data-testid="link_to_spying_frog" to={paths.SpyingFrog}>
         SpyingFrog
       </Link>
-      <Link data-testid="link_to_spying_frog" to={paths.RtkCreateApi}>
-        RtkCreateApi
-      </Link>
-      <Link data-testid="link_to_spying_frog" to={paths.RtkCreateAsyncThunk}>
-        RtkCreateAsyncThunk
-      </Link>
-      <Link data-testid="link_to_spying_frog" to={paths.RtkCreateApiPost}>
-        RtkCreateApiPost
-      </Link>
-      <Link data-testid="link_to_spying_frog" to={paths.GraphQLAndApollo}>
-        GraphQLAndApollo
-      </Link>
+      <Link to={paths.ScrollAnimation}>ScrollAnimation</Link>
+      <Link to={paths.RtkCreateApi}>RtkCreateApi</Link>
+      <Link to={paths.RtkCreateAsyncThunk}>RtkCreateAsyncThunk</Link>
+      <Link to={paths.RtkCreateApiPost}>RtkCreateApiPost</Link>
+      <Link to={paths.GraphQLAndApollo}>GraphQLAndApollo</Link>
+      <Link to={paths.ReactQuery}>ReactQuery</Link>
     </nav>
   );
 };

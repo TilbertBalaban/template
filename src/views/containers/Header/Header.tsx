@@ -17,6 +17,7 @@ const HeaderContainer = () => {
       <Link to={paths.RtkCreateAsyncThunk}>RtkCreateAsyncThunk</Link>
       <Link to={paths.RtkCreateApiPost}>RtkCreateApiPost</Link>
       <Link to={paths.GraphQLAndApollo}>GraphQLAndApollo</Link>
+      <Link to={paths.ReactQuery}>ReactQuery</Link>
     </nav>
   );
 };

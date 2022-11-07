@@ -6,6 +6,10 @@ preview - https://template-tilbertbalaban.vercel.app
 
 ### React query
 
+1. Queries
+2. Mutations
+3. Query Invalidation
+
 ## Redux typed with TS
 
 ## Redux toolkit

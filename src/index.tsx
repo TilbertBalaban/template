@@ -47,7 +47,10 @@ const Router = () => (
       <Route path={paths.Homepage} element={<App />} />
       <Route path={paths.SpyingFrog} element={<SpyingFrog />} />
       <Route path={paths.ScrollAnimation} element={<ScrollAnimation />} />
-      <Route path={paths.RtkCreateApi} element={<VehiclesContainer />} />
+      <Route
+        path={paths.RtkCreateApi}
+        element={<VehiclesContainer unusedProp="err" />}
+      />
       <Route path={paths.RtkCreateAsyncThunk} element={<ItemsContainer />} />
       <Route path={paths.RtkCreateApiPost} element={<PostsContainer />} />
       <Route

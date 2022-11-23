@@ -47,3 +47,7 @@ preview - https://template-tilbertbalaban.vercel.app
 
 
 # tRPC ?
+# Scss, css advanced features
+
+1. Parallax
+2. Scroll animation

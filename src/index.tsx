@@ -20,6 +20,8 @@ import { setupStore } from 'redux/store';
 import { paths } from 'utils/paths';
 import { ScrollAnimation } from 'views/containers/ScrollAnimation/ScrollAnimation';
 import { ReactQueryExample } from 'views/containers/ReactQueryExample';
+import { Formik } from 'views/containers/Formik';
+import { StrictMode } from 'react';
 
 const store = setupStore();
 
@@ -58,6 +60,7 @@ const Router = () => (
         element={<GraphQlAndApolloExample />}
       />
       <Route path={paths.ReactQuery} element={<ReactQueryExample />} />
+      <Route path={paths.Formik} element={<Formik />} />
     </Routes>
   </BrowserRouter>
 );
@@ -66,7 +69,9 @@ root.render(
   <Provider store={store}>
     <ApolloProvider client={client}>
       <QueryClientProvider client={queryClient}>
-        <Router />
+        <StrictMode>
+          <Router />
+        </StrictMode>
       </QueryClientProvider>
     </ApolloProvider>
   </Provider>,

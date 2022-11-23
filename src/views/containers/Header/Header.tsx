@@ -18,6 +18,7 @@ const HeaderContainer = () => {
       <Link to={paths.RtkCreateApiPost}>RtkCreateApiPost</Link>
       <Link to={paths.GraphQLAndApollo}>GraphQLAndApollo</Link>
       <Link to={paths.ReactQuery}>ReactQuery</Link>
+      <Link to={paths.Formik}>Formik</Link>
     </nav>
   );
 };

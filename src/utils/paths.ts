@@ -7,4 +7,5 @@ export enum paths {
   GraphQLAndApollo = 'graphql_and_apollo',
   ScrollAnimation = 'scroll_animation',
   ReactQuery = 'react_query',
+  Formik = 'formik',
 }

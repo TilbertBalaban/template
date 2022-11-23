@@ -44,3 +44,6 @@ preview - https://template-tilbertbalaban.vercel.app
 
 1. install - `npm install husky --save-dev`
 2. add the new hook - `npx husky add .husky/pre-commit "npm test"`
+
+
+# tRPC ?

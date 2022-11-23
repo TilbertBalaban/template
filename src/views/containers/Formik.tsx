@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 import { withFormik, FormikProps, FormikErrors, Form, Field } from 'formik';
+import { tw, css } from 'twind/css';
 
 // Notice: component rerenders when we type in input.
 // TODO: test React Hook Form
@@ -28,12 +29,33 @@ const InnerForm = ({
   return (
     <Form>
       <h2>{formHeader}</h2>
-      <Field type="email" name="email" />
-      {touched.email && errors.email && <div>{errors.email}</div>}
+      <div className={tw`flex`}>
+        <Field
+          type="email"
+          name="email"
+          className={tw`border border-gray-300 rounded-md p-1`}
+        />
+        {touched.email && errors.email && (
+          <div
+            className={tw(
+              css({
+                '&::before': { content: '"🙁"' },
+              }),
+              tw`flex items-center text(red-500 center) font-bold`,
+            )}
+          >
+            {errors.email}
+          </div>
+        )}
 
-      <button type="submit" disabled={isSubmitting}>
-        Submit
-      </button>
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className={tw`bg-blue-500 text-white rounded-md p-1 ml-2`}
+        >
+          Submit
+        </button>
+      </div>
     </Form>
   );
 };
@@ -67,7 +89,11 @@ const MyForm = withFormik<MyFormProps & CustomProps, FormValues>({
 
 const Formik = () => (
   <div>
-    <h1>Formik example</h1>
+    <h1
+      className={tw`font-bold text(center 5xl white sm:gray-800 md:pink-700)`}
+    >
+      Formik example
+    </h1>
     <MyForm formHeader="Sign up" initialEmail="test@email.com" />
   </div>
 );

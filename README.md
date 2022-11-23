@@ -46,6 +46,7 @@ preview - https://template-tilbertbalaban.vercel.app
 2. add the new hook - `npx husky add .husky/pre-commit "npm test"`
 
 
+# tRPC ?
 # Scss, css advanced features
 
 1. Parallax

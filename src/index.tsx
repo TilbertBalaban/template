@@ -38,6 +38,9 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false,
+      /*
+      be careful with refetchOnWindowFocus === true with files input and alerts
+      */
     },
   },
 });

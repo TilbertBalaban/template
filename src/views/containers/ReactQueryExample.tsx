@@ -33,7 +33,7 @@ export const ReactQueryExample = () => {
         }}
         type="button"
       >
-        Add item
+        Add item (fake request, invalidate data on success)
       </button>
     </div>
   );

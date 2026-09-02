@@ -1,6 +1,13 @@
-# Template for the project
+# React project template
 
-preview - https://template-tilbertbalaban.vercel.app
+A starter for new React + TypeScript apps (Create React App) with the tooling I
+reuse across projects wired up: React Query, Redux Toolkit, Apollo/GraphQL,
+Formik + Yup/Zod forms, Storybook, Loki visual tests, WebdriverIO E2E, Husky
+pre-push hooks. The rest of this file is my working notes on the libraries.
+
+Live preview: <https://template-tilbertbalaban.vercel.app>
+
+Run locally: `npm install && npm start`, Storybook with `npm run storybook`.
 
 ## React hooks typed with TS
 
